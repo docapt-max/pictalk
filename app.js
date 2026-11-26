@@ -5,15 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const LOOK_SECONDS = 30;
   const RING_CIRCUMFERENCE = 2 * Math.PI * 36; // r = 36
 
-  const SHORT_LABELS = ["Park", "Station", "Classroom", "Market", "Pool"];
-
   // Embedded fallback if opened directly via file:// instead of GitHub Pages / HTTP server
   const FALLBACK_SCENES = [
     {
       id: "sunny_park",
       title: "Park on a Sunny Holiday",
       image: "images/park.webp",
-      wordBank: ["picnic", "gazebo", "rowing", "squirrel", "sandpit", "bubbles", "kite", "roller skates"],
       questions: [
         { type: "Observe", text: "1. What games and activities are the children playing in the park?" },
         { type: "Detail", text: "2. Spot three things in the sky or trees. Describe where each one is." },
@@ -25,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "railway_station",
       title: "A Busy Railway Station",
       image: "images/station.webp",
-      wordBank: ["platform", "luggage", "porter", "footbridge", "ticket collector", "pigeons", "tea stall", "clock"],
       questions: [
         { type: "Observe", text: "1. What are the passengers carrying, and how are they moving their luggage?" },
         { type: "Detail", text: "2. Find the station clock and platform sign. What details can you read?" },
@@ -37,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "engaged_classroom",
       title: "An Engaged Classroom",
       image: "images/classroom.webp",
-      wordBank: ["solar system", "volcano", "globe", "teacher", "raising hands", "bookshelf", "guinea pig", "art wall"],
       questions: [
         { type: "Observe", text: "1. What subject do you think the teacher is teaching? Give two clues from the picture." },
         { type: "Detail", text: "2. Name five items you can see on the walls, shelves, or students' desks." },
@@ -49,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "busy_market",
       title: "Busy Market Place",
       image: "images/market.webp",
-      wordBank: ["vegetables", "weighing scale", "rickshaw", "customers", "cauliflower", "pumpkins", "tea stall", "basket"],
       questions: [
         { type: "Observe", text: "1. Name four fruits or vegetables being sold at the stalls." },
         { type: "Colors", text: "2. Which stall looks the most colorful? Describe the items on display." },
@@ -61,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "swimming_pool",
       title: "At the Swimming Pool",
       image: "images/pool.webp",
-      wordBank: ["lifeguard", "diving board", "float", "goggles", "armbands", "splash", "sunscreen", "towel"],
       questions: [
         { type: "Observe", text: "1. What safety gear are the swimmers wearing in the water?" },
         { type: "Count", text: "2. Count how many people are inside the pool and how many are outside." },
@@ -73,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // State
   let scenes = [];
-  let currentSceneIndex = 0;
+  let currentSceneIndex = -1;
   let currentQuestionIndex = -1; // -1 = Look-First mode
 
   // Zoom & Pan state
@@ -94,9 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let timerPaused = false;
 
   // DOM Elements
-  const scenePills = document.getElementById("scene-pills");
-  const sceneSelector = document.getElementById("scene-selector");
-  const sceneTitle = document.getElementById("scene-title");
+  const nextSceneBtn = document.getElementById("next-scene-btn");
   const zoomStatus = document.getElementById("zoom-status");
   const imageContainer = document.getElementById("image-container");
   const mainImage = document.getElementById("main-image");
@@ -115,17 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
 
-  const zoomBtn = document.getElementById("zoom-btn");
-  const wordBankBtn = document.getElementById("word-bank-btn");
-  const printBtn = document.getElementById("print-btn");
-
-  const wordBankDrawer = document.getElementById("word-bank-drawer");
-  const closeDrawerBtn = document.getElementById("close-drawer");
-  const wordsGrid = document.getElementById("words-grid");
-
-  const printTitle = document.getElementById("print-title");
-  const printLines = document.getElementById("print-lines");
-
   // 1. Load scenes via relative ./scenes.json
   fetch("./scenes.json")
     .then((response) => {
@@ -142,42 +122,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   function initApp() {
-    populateSceneSelectors();
     bindEvents();
-    loadScene(0);
+    loadRandomScene();
   }
 
-  function getPillLabel(scene, index) {
-    const shortName = SHORT_LABELS[index] || scene.title;
-    return `${index + 1}. ${shortName}`;
+  function pickRandomSceneIndex() {
+    if (scenes.length <= 1) return 0;
+    let nextIndex = currentSceneIndex;
+    while (nextIndex === currentSceneIndex) {
+      nextIndex = Math.floor(Math.random() * scenes.length);
+    }
+    return nextIndex;
   }
 
-  function populateSceneSelectors() {
-    scenePills.innerHTML = "";
-    sceneSelector.innerHTML = "";
-
-    scenes.forEach((scene, index) => {
-      const label = getPillLabel(scene, index);
-
-      const pill = document.createElement("button");
-      pill.type = "button";
-      pill.className = "scene-pill";
-      pill.textContent = label;
-      pill.addEventListener("click", () => loadScene(index));
-      scenePills.appendChild(pill);
-
-      const option = document.createElement("option");
-      option.value = String(index);
-      option.textContent = label;
-      sceneSelector.appendChild(option);
-    });
-  }
-
-  function updateSceneSelectors() {
-    sceneSelector.value = String(currentSceneIndex);
-    Array.from(scenePills.children).forEach((pill, index) => {
-      pill.classList.toggle("active", index === currentSceneIndex);
-    });
+  function loadRandomScene() {
+    const index = pickRandomSceneIndex();
+    loadScene(index);
   }
 
   function loadScene(index) {
@@ -185,14 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
     currentQuestionIndex = -1;
     const scene = scenes[index];
 
-    sceneTitle.textContent = scene.title;
     mainImage.src = scene.image;
-    mainImage.alt = scene.title;
+    mainImage.alt = "Picture comprehension scene";
 
-    updateSceneSelectors();
     resetZoom();
-    setupWordBank(scene.wordBank);
-    buildPrintWorksheet(scene);
     showLookFirstMode();
   }
 
@@ -264,17 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     text.className = "question-text";
     text.textContent = q.text;
 
-    const reminder = document.createElement("div");
-    reminder.className = "reminder";
-    reminder.innerHTML = `
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 20h9"></path>
-        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path>
-      </svg>
-      <span>Write your answer in your notebook!</span>
-    `;
-
-    card.append(badge, text, reminder);
+    card.append(badge, text);
     questionCardSlot.innerHTML = "";
     questionCardSlot.appendChild(card);
 
@@ -346,8 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
     panX = 0;
     panY = 0;
     imageContainer.classList.add("zoomed");
-    zoomBtn.setAttribute("aria-pressed", "true");
-    zoomBtn.classList.add("active");
     resetPanBtn.hidden = false;
     zoomStatus.textContent = "Drag picture to look around (1.75×)";
     applyImageTransform();
@@ -359,71 +303,14 @@ document.addEventListener("DOMContentLoaded", () => {
     panX = 0;
     panY = 0;
     imageContainer.classList.remove("zoomed", "dragging");
-    zoomBtn.setAttribute("aria-pressed", "false");
-    zoomBtn.classList.remove("active");
     resetPanBtn.hidden = true;
-    zoomStatus.textContent = "Double-tap or click 🔍 to zoom";
+    zoomStatus.textContent = "Tap to Zoom";
     applyImageTransform();
   }
 
-  // 5. Word Bank & Hints Drawer
-  function setupWordBank(words) {
-    wordsGrid.innerHTML = "";
-    if (!words || words.length === 0) {
-      wordBankBtn.hidden = true;
-      return;
-    }
-    wordBankBtn.hidden = false;
-    words.forEach((word) => {
-      const tag = document.createElement("div");
-      tag.className = "word-tag";
-      tag.textContent = word;
-      wordsGrid.appendChild(tag);
-    });
-  }
-
-  function openWordBank() {
-    wordBankDrawer.hidden = false;
-    wordBankBtn.setAttribute("aria-expanded", "true");
-    closeDrawerBtn.focus();
-  }
-
-  function closeWordBank() {
-    wordBankDrawer.hidden = true;
-    wordBankBtn.setAttribute("aria-expanded", "false");
-    wordBankBtn.focus();
-  }
-
-  // 6. Print Worksheet Builder
-  function buildPrintWorksheet(scene) {
-    printTitle.textContent = `${scene.title} — Picture Worksheet`;
-    printLines.innerHTML = "";
-
-    scene.questions.forEach((q) => {
-      const block = document.createElement("div");
-      block.className = "print-question-block";
-
-      const prompt = document.createElement("p");
-      prompt.className = "print-question-prompt";
-      prompt.textContent = `${q.text} (${q.type})`;
-      block.appendChild(prompt);
-
-      const lineCount = q.type === "Write" || q.type === "Imagine" ? 4 : 3;
-      for (let i = 0; i < lineCount; i += 1) {
-        const line = document.createElement("div");
-        line.className = "ruled-line";
-        block.appendChild(line);
-      }
-
-      printLines.appendChild(block);
-    });
-  }
-
-  // 7. Event Wiring
+  // 5. Event Wiring
   function bindEvents() {
-    sceneSelector.addEventListener("change", (e) => {
-      loadScene(Number(e.target.value));
-    });
+    nextSceneBtn.addEventListener("click", loadRandomScene);
 
     startBtn.addEventListener("click", startQuestions);
 
@@ -435,7 +322,6 @@ document.addEventListener("DOMContentLoaded", () => {
     prevBtn.addEventListener("click", showPrevQuestion);
     nextBtn.addEventListener("click", showNextQuestion);
 
-    zoomBtn.addEventListener("click", toggleZoom);
     resetPanBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       resetZoom();
@@ -497,25 +383,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    wordBankBtn.addEventListener("click", openWordBank);
-    closeDrawerBtn.addEventListener("click", closeWordBank);
-    wordBankDrawer.addEventListener("click", (e) => {
-      if (e.target === wordBankDrawer) closeWordBank();
-    });
-
-    printBtn.addEventListener("click", () => window.print());
-
     window.addEventListener("resize", () => {
       if (isZoomed) applyImageTransform();
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        if (!wordBankDrawer.hidden) closeWordBank();
-        else if (isZoomed) resetZoom();
-      } else if (e.key === "ArrowLeft" && wordBankDrawer.hidden) {
+      if (e.key === "Escape" && isZoomed) {
+        resetZoom();
+      } else if (e.key === "ArrowLeft") {
         showPrevQuestion();
-      } else if (e.key === "ArrowRight" && wordBankDrawer.hidden) {
+      } else if (e.key === "ArrowRight") {
         showNextQuestion();
       }
     });
