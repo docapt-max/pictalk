@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sunny_park",
+    "title": "Park on a Sunny Holiday",
+    "image": "images/park.webp",
+    "wordBank": ["picnic", "gazebo", "rowing", "squirrel", "sandpit", "bubbles", "kite", "roller skates"],
+    "questions": [
+      { "type": "Observe", "text": "1. What games and activities are the children playing in the park?" },
+      { "type": "Detail", "text": "2. Spot three things in the sky or trees. Describe where each one is." },
+      { "type": "Safety", "text": "3. Who is taking care of the younger children, and what are they doing?" },
+      { "type": "Write", "text": "4. Write 3 sentences about what you would do first if you visited this park." }
+    ]
+  },
+  {
+    "id": "railway_station",
+    "title": "A Busy Railway Station",
+    "image": "images/station.webp",
+    "wordBank": ["platform", "luggage", "porter", "footbridge", "ticket collector", "pigeons", "tea stall", "clock"],
+    "questions": [
+      { "type": "Observe", "text": "1. What are the passengers carrying, and how are they moving their luggage?" },
+      { "type": "Detail", "text": "2. Find the station clock and platform sign. What details can you read?" },
+      { "type": "People", "text": "3. Describe two different workers you see on the platform and their jobs." },
+      { "type": "Imagine", "text": "4. Pick one family on the platform. Where are they going? Write 3 sentences." }
+    ]
+  },
+  {
+    "id": "engaged_classroom",
+    "title": "An Engaged Classroom",
+    "image": "images/classroom.webp",
+    "wordBank": ["solar system", "volcano", "globe", "teacher", "raising hands", "bookshelf", "guinea pig", "art wall"],
+    "questions": [
+      { "type": "Observe", "text": "1. What subject do you think the teacher is teaching? Give two clues from the picture." },
+      { "type": "Detail", "text": "2. Name five items you can see on the walls, shelves, or students' desks." },
+      { "type": "Feelings", "text": "3. How do the students look? How can you tell they are paying attention?" },
+      { "type": "Write", "text": "4. Write 3 sentences comparing this classroom to your own classroom." }
+    ]
+  },
+  {
+    "id": "busy_market",
+    "title": "Busy Market Place",
+    "image": "images/market.webp",
+    "wordBank": ["vegetables", "weighing scale", "rickshaw", "customers", "cauliflower", "pumpkins", "tea stall", "basket"],
+    "questions": [
+      { "type": "Observe", "text": "1. Name four fruits or vegetables being sold at the stalls." },
+      { "type": "Colors", "text": "2. Which stall looks the most colorful? Describe the items on display." },
+      { "type": "Action", "text": "3. What are the shopkeepers and customers doing? Describe one conversation." },
+      { "type": "Write", "text": "4. Imagine you have ₹100 to spend at this market. What will you buy and why?" }
+    ]
+  },
+  {
+    "id": "swimming_pool",
+    "title": "At the Swimming Pool",
+    "image": "images/pool.webp",
+    "wordBank": ["lifeguard", "diving board", "float", "goggles", "armbands", "splash", "sunscreen", "towel"],
+    "questions": [
+      { "type": "Observe", "text": "1. What safety gear are the swimmers wearing in the water?" },
+      { "type": "Count", "text": "2. Count how many people are inside the pool and how many are outside." },
+      { "type": "Rules", "text": "3. Why is walking instead of running important around a swimming pool?" },
+      { "type": "Write", "text": "4. Write 3 sentences describing how the water feels and what sounds you would hear." }
+    ]
+  }
+]

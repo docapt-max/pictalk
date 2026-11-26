@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>PictureTalk — Picture Comprehension Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true">🖼️</span>
+        <h1>PictureTalk</h1>
+      </div>
+
+      <nav class="scene-pills" id="scene-pills" aria-label="Choose a picture scene"></nav>
+      <label class="sr-only" for="scene-selector">Select scene</label>
+      <select id="scene-selector" class="scene-select" aria-label="Select scene"></select>
+    </div>
+
+    <div class="controls">
+      <button type="button" id="zoom-btn" class="ctrl-btn" aria-pressed="false" title="Toggle 1.75x zoom &amp; pan">
+        <span aria-hidden="true">🔍</span>
+        <span class="ctrl-label">Zoom / Inspect</span>
+      </button>
+      <button type="button" id="word-bank-btn" class="ctrl-btn" aria-expanded="false" aria-controls="word-bank-drawer" title="Show Word Bank &amp; Hints">
+        <span aria-hidden="true">💡</span>
+        <span class="ctrl-label">Word Bank &amp; Hints</span>
+      </button>
+      <button type="button" id="print-btn" class="ctrl-btn ctrl-btn-primary" title="Print Worksheet">
+        <span aria-hidden="true">🖨️</span>
+        <span class="ctrl-label">Print Worksheet</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <!-- Left (~65%): Picture Frame -->
+    <section class="picture-stage" aria-labelledby="scene-title">
+      <div class="picture-toolbar">
+        <h2 id="scene-title" class="scene-title">Loading scene…</h2>
+        <span id="zoom-status" class="zoom-status">Double-tap or click 🔍 to zoom</span>
+      </div>
+
+      <div id="image-container" class="image-container" tabindex="0" aria-label="Picture viewer">
+        <img id="main-image" src="" alt="" draggable="false" />
+        <button type="button" id="reset-pan-btn" class="reset-pan-btn" hidden>Reset Zoom</button>
+      </div>
+    </section>
+
+    <!-- Right (~35%): Look-First Prompt & One-at-a-Time Question Card -->
+    <aside id="question-panel" class="question-panel" aria-label="Comprehension questions">
+      <!-- Look-First State -->
+      <div id="look-first-card" class="look-first-card">
+        <div class="countdown-wrapper" id="countdown-wrapper" aria-label="30 second observation timer">
+          <svg class="countdown-ring" viewBox="0 0 84 84" width="84" height="84" aria-hidden="true">
+            <circle class="ring-track" cx="42" cy="42" r="36"></circle>
+            <circle class="ring-progress" id="ring-progress" cx="42" cy="42" r="36"></circle>
+          </svg>
+          <span class="countdown-seconds" id="countdown-seconds">30s</span>
+        </div>
+
+        <span class="look-badge">Look-First Mode</span>
+        <h3 class="look-heading">Look closely at the picture!</h3>
+        <p class="look-copy">
+          Notice the people, places, colors, and tiny details. Tap the picture or click
+          <strong>Start Questions</strong> when you are ready.
+        </p>
+
+        <div class="look-actions">
+          <button type="button" id="start-btn" class="start-btn">Start Questions &rarr;</button>
+          <button type="button" id="timer-toggle-btn" class="timer-toggle-btn">Pause Timer</button>
+        </div>
+      </div>
+
+      <!-- Active Question Card Slot -->
+      <div id="question-card-slot" class="question-card-slot" hidden></div>
+
+      <!-- Progress & Navigation -->
+      <div id="nav-area" class="nav-area" hidden>
+        <div class="progress-row">
+          <span id="counter" class="counter">Question 1 of 4</span>
+          <div id="progress-dots" class="progress-dots" aria-hidden="true"></div>
+        </div>
+        <div class="nav-btns">
+          <button type="button" id="prev-btn" class="nav-btn">&larr; Previous</button>
+          <button type="button" id="next-btn" class="nav-btn nav-btn-primary">Next Question &rarr;</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Print-Only Ruled Worksheet Section -->
+  <section class="print-worksheet" aria-hidden="true">
+    <h2 id="print-title" class="print-title"></h2>
+    <div id="print-lines" class="print-lines"></div>
+  </section>
+
+  <!-- Word Bank & Hints Drawer / Modal -->
+  <div id="word-bank-drawer" class="drawer-backdrop" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+    <div class="drawer-card">
+      <div class="drawer-header">
+        <div>
+          <h2 id="drawer-title">Word Bank &amp; Hints</h2>
+          <p class="drawer-subtitle">Use these words to help spell your answers in your notebook.</p>
+        </div>
+        <button type="button" id="close-drawer" class="close-drawer" aria-label="Close Word Bank">&times;</button>
+      </div>
+
+      <div id="words-grid" class="words-grid"></div>
+
+      <div class="hints-box">
+        <h3>Helpful Tips for Writing</h3>
+        <ul>
+          <li>Start every sentence with a <strong>capital letter</strong> and end with a <strong>period</strong>.</li>
+          <li>Describe <strong>who</strong> is in the picture, <strong>what</strong> they are doing, and <strong>where</strong> they are.</li>
+          <li>Double-tap the picture to zoom in and check small background details!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
