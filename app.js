@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Park on a Sunny Holiday",
       image: "images/park.webp",
       questions: [
-        { type: "Observe", text: "1. What games and activities are the children playing in the park?" },
-        { type: "Detail", text: "2. Spot three things in the sky or trees. Describe where each one is." },
-        { type: "Safety", text: "3. Who is taking care of the younger children, and what are they doing?" },
-        { type: "Write", text: "4. Write 3 sentences about what you would do first if you visited this park." }
+        { text: "1. What games and activities are the children playing in the park?" },
+        { text: "2. Spot three things in the sky or trees. Describe where each one is." },
+        { text: "3. Who is taking care of the younger children, and what are they doing?" },
+        { text: "4. Write 3 sentences about what you would do first if you visited this park." }
       ]
     },
     {
@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "A Busy Railway Station",
       image: "images/station.webp",
       questions: [
-        { type: "Observe", text: "1. What are the passengers carrying, and how are they moving their luggage?" },
-        { type: "Detail", text: "2. Find the station clock and platform sign. What details can you read?" },
-        { type: "People", text: "3. Describe two different workers you see on the platform and their jobs." },
-        { type: "Imagine", text: "4. Pick one family on the platform. Where are they going? Write 3 sentences." }
+        { text: "1. What are the passengers carrying, and how are they moving their luggage?" },
+        { text: "2. Find the station clock and platform sign. What details can you read?" },
+        { text: "3. Describe two different workers you see on the platform and their jobs." },
+        { text: "4. Pick one family on the platform. Where are they going? Write 3 sentences." }
       ]
     },
     {
@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "An Engaged Classroom",
       image: "images/classroom.webp",
       questions: [
-        { type: "Observe", text: "1. What subject do you think the teacher is teaching? Give two clues from the picture." },
-        { type: "Detail", text: "2. Name five items you can see on the walls, shelves, or students' desks." },
-        { type: "Feelings", text: "3. How do the students look? How can you tell they are paying attention?" },
-        { type: "Write", text: "4. Write 3 sentences comparing this classroom to your own classroom." }
+        { text: "1. What subject do you think the teacher is teaching? Give two clues from the picture." },
+        { text: "2. Name five items you can see on the walls, shelves, or students' desks." },
+        { text: "3. How do the students look? How can you tell they are paying attention?" },
+        { text: "4. Write 3 sentences comparing this classroom to your own classroom." }
       ]
     },
     {
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Busy Market Place",
       image: "images/market.webp",
       questions: [
-        { type: "Observe", text: "1. Name four fruits or vegetables being sold at the stalls." },
-        { type: "Colors", text: "2. Which stall looks the most colorful? Describe the items on display." },
-        { type: "Action", text: "3. What are the shopkeepers and customers doing? Describe one conversation." },
-        { type: "Write", text: "4. Imagine you have ₹100 to spend at this market. What will you buy and why?" }
+        { text: "1. Name four fruits or vegetables being sold at the stalls." },
+        { text: "2. Which stall looks the most colorful? Describe the items on display." },
+        { text: "3. What are the shopkeepers and customers doing? Describe one conversation." },
+        { text: "4. Imagine you have ₹100 to spend at this market. What will you buy and why?" }
       ]
     },
     {
@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "At the Swimming Pool",
       image: "images/pool.webp",
       questions: [
-        { type: "Observe", text: "1. What safety gear are the swimmers wearing in the water?" },
-        { type: "Count", text: "2. Count how many people are inside the pool and how many are outside." },
-        { type: "Rules", text: "3. Why is walking instead of running important around a swimming pool?" },
-        { type: "Write", text: "4. Write 3 sentences describing how the water feels and what sounds you would hear." }
+        { text: "1. What safety gear are the swimmers wearing in the water?" },
+        { text: "2. Count how many people are inside the pool and how many are outside." },
+        { text: "3. Why is walking instead of running important around a swimming pool?" },
+        { text: "4. Write 3 sentences describing how the water feels and what sounds you would hear." }
       ]
     }
   ];
@@ -210,17 +210,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const card = document.createElement("article");
     card.className = "question-card";
-    card.dataset.type = q.type;
-
-    const badge = document.createElement("span");
-    badge.className = "type-badge";
-    badge.textContent = q.type;
 
     const text = document.createElement("p");
     text.className = "question-text";
-    text.textContent = q.text;
+    text.textContent = typeof q === "string" ? q : q.text;
 
-    card.append(badge, text);
+    card.append(text);
     questionCardSlot.innerHTML = "";
     questionCardSlot.appendChild(card);
 

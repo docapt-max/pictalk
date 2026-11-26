@@ -3,35 +3,20 @@
     "id": "sunny_park",
     "title": "Park on a Sunny Holiday",
     "image": "images/park.webp",
-    "wordBank": [
-      "picnic",
-      "gazebo",
-      "rowing",
-      "squirrel",
-      "sandpit",
-      "bubbles",
-      "kite",
-      "roller skates"
-    ],
     "questions": [
       {
-        "type": "Observe",
         "text": "What games are the children playing in the park?"
       },
       {
-        "type": "Observe",
         "text": "What activitys are happening in the park?"
       },
       {
-        "type": "Detail",
         "text": "Spot three things in the sky or trees. Describe where each one is."
       },
       {
-        "type": "Safety",
         "text": "Who is taking care of the younger children?"
       },
       {
-        "type": "Write",
         "text": "Write 3 sentences about what you would do first if you visited this park."
       }
     ]
@@ -40,36 +25,111 @@
     "id": "railway_station",
     "title": "A Busy Railway Station",
     "image": "images/station.webp",
-    "wordBank": [
-      "platform",
-      "luggage",
-      "porter",
-      "footbridge",
-      "ticket collector",
-      "pigeons",
-      "tea stall",
-      "clock"
-    ],
     "questions": [
       {
-        "type": "Observe",
-        "text": "1. What are the passengers carrying?"
+        "text": "What are the passengers carrying?"
       },
       {
-        "type": "Observe",
-        "text": "1a.How are passengers moving their luggage?"
+        "text": "How are passengers moving their luggage?"
       },
       {
-        "type": "Detail",
-        "text": "2. Find the station clock and platform sign. What details can you read?"
+        "text": "Where is the station clock and what time is it showing?"
       },
       {
-        "type": "People",
-        "text": "3. Who are the two different workers you see on the platform and what is their jobs."
+        "text": "What all is being sold at the station?"
       },
       {
-        "type": "Imagine",
-        "text": "4. Pick one family on the platform. Where are they going? Write 3 sentences."
+        "text": "Find the ticket collector. What color coat is he wearing?"
+      },
+      {
+        "text": "Find the people who are eating from a tiffin box."
+      },
+      {
+        "text": "What items are hot at the station?"
+      },
+      {
+        "text": "What animals can you find in this station?"
+      },
+      {
+        "text": "Are there any monkeys? How many of them?"
+      },
+      {
+        "text": "Are there any birds? How many of them are there?"
+      },
+      {
+        "text": "Find the person who is selling balloons. What color shirt is he wearing?"
+      },
+      {
+        "text": "What color trains are there at the station?"
+      },
+      {
+        "text": "Find the man with a broom. What is he doing here?"
+      },
+      {
+        "text": "Can you find a coolie? What is he doing at the station?"
+      },
+      {
+        "text": "Can you find the dog in the picture? What is he doing?"
+      },
+      {
+        "text": "Do you see a bridge in this picture?"
+      },
+      {
+        "text": "How many people are on the bridge?"
+      },
+      {
+        "text": "How many people are sitting on the bench?"
+      },
+      {
+        "text": "Find the station clock and platform sign. What details can you read?"
+      },
+      {
+        "text": "Who are the two different workers you see on the platform and what are their jobs?"
+      },
+      {
+        "text": "Pick one family on the platform. Where are they going? Write 2 sentences."
+      },
+      {
+        "text": "How many suitcases can you count?"
+      },
+      {
+        "text": "What food items are being sold?"
+      },
+      {
+        "text": "Find the people who are wearing a blue shirt."
+      },
+      {
+        "text": "Count the number of people wearing a saree."
+      },
+      {
+        "text": "What are the children doing here?"
+      },
+      {
+        "text": "What will happen to the train after some time?"
+      },
+      {
+        "text": "Can you spot the person driving the train?"
+      },
+      {
+        "text": "What will people do after buying a book from the bookshop?"
+      },
+      {
+        "text": "What will children do after buying balloons from the balloon man?"
+      },
+      {
+        "text": "What will people do after buying tea and samosas from the food stall?"
+      },
+      {
+        "text": "Is the blue train coming or going?"
+      },
+      {
+        "text": "Is the red train coming or going?"
+      },
+      {
+        "text": "What animals can you see in this picture?"
+      },
+      {
+        "text": "What color shirt is the food stall person wearing?"
       }
     ]
   },
@@ -77,32 +137,99 @@
     "id": "engaged_classroom",
     "title": "An Engaged Classroom",
     "image": "images/classroom.webp",
-    "wordBank": [
-      "solar system",
-      "volcano",
-      "globe",
-      "teacher",
-      "raising hands",
-      "bookshelf",
-      "guinea pig",
-      "art wall"
-    ],
     "questions": [
       {
-        "type": "Observe",
-        "text": "1. What subject do you think the teacher is teaching?"
+        "text": "What subject do you think the teacher is teaching?"
       },
       {
-        "type": "Detail",
-        "text": "2. Name five items you can see in the class room."
+        "text": "Name five items you can see in the classroom."
       },
       {
-        "type": "Feelings",
-        "text": "3. what are the students doing? "
+        "text": "What are the students doing?"
       },
       {
-        "type": "Write",
-        "text": "4. Write 3 sentences comparing this classroom to your own classroom."
+        "text": "Write 3 sentences comparing this classroom to your own classroom."
+      },
+      {
+        "text": "How many children are there in the classroom?"
+      },
+      {
+        "text": "What all are drawn on the blackboard?"
+      },
+      {
+        "text": "How many dinosaur toys are there in the class?"
+      },
+      {
+        "text": "Show the world map or globe in the classroom."
+      },
+      {
+        "text": "How many children have put their hands up in the class?"
+      },
+      {
+        "text": "How many plants are there in the class?"
+      },
+      {
+        "text": "Is there any pet animal in the class?"
+      },
+      {
+        "text": "How many carpets are there in the class?"
+      },
+      {
+        "text": "How many paper aeroplanes are there in the class?"
+      },
+      {
+        "text": "What things are on the floor of this class?"
+      },
+      {
+        "text": "Who all are wearing yellow shirts in this class?"
+      },
+      {
+        "text": "How many children are wearing dresses with dots on them?"
+      },
+      {
+        "text": "How many children are wearing a striped shirt?"
+      },
+      {
+        "text": "Who is wearing specs in this classroom?"
+      },
+      {
+        "text": "How many plants are there in this classroom? Count them."
+      },
+      {
+        "text": "What things are kept in the cupboard of this classroom?"
+      },
+      {
+        "text": "Is it morning or night in this classroom?"
+      },
+      {
+        "text": "Show the calendar in this classroom. What do you do with a calendar?"
+      },
+      {
+        "text": "Is there a clock in the classroom? Show the clock."
+      },
+      {
+        "text": "How many posters are posted on the art wall of this classroom?"
+      },
+      {
+        "text": "Find the word signs in this classroom."
+      },
+      {
+        "text": "Are the children in the classroom engaged or distracted?"
+      },
+      {
+        "text": "Are there any children in the classroom who are not listening to the teacher?"
+      },
+      {
+        "text": "How many open crayon boxes are there in this classroom?"
+      },
+      {
+        "text": "Find the alphabet chart in this classroom."
+      },
+      {
+        "text": "How many flower pots are there in this classroom?"
+      },
+      {
+        "text": "What is the teacher trying to do in this class?"
       }
     ]
   },
@@ -110,31 +237,17 @@
     "id": "busy_market",
     "title": "Busy Market Place",
     "image": "images/market.webp",
-    "wordBank": [
-      "vegetables",
-      "weighing scale",
-      "rickshaw",
-      "customers",
-      "cauliflower",
-      "pumpkins",
-      "tea stall",
-      "basket"
-    ],
     "questions": [
       {
-        "type": "Observe",
         "text": "1. Name four fruits or vegetables being sold at the stalls."
       },
       {
-        "type": "Colors",
         "text": "2. Which stall looks the most colorful? Describe the items on display."
       },
       {
-        "type": "Action",
         "text": "3. What are the shopkeepers and customers doing? Describe one conversation."
       },
       {
-        "type": "Write",
         "text": "4. Imagine you have ₹100 to spend at this market. What will you buy and why?"
       }
     ]
@@ -143,32 +256,90 @@
     "id": "swimming_pool",
     "title": "At the Swimming Pool",
     "image": "images/pool.webp",
-    "wordBank": [
-      "lifeguard",
-      "diving board",
-      "float",
-      "goggles",
-      "armbands",
-      "splash",
-      "sunscreen",
-      "towel"
-    ],
     "questions": [
       {
-        "type": "Observe",
-        "text": "1. What safety gear are the swimmers wearing in the water?"
+        "text": "What safety gear are the swimmers wearing in the water?"
       },
       {
-        "type": "Count",
-        "text": "2. Count how many people are inside the pool and how many are outside."
+        "text": "Count how many people are inside the pool and how many are outside."
       },
       {
-        "type": "Rules",
-        "text": "3. Why is walking instead of running important around a swimming pool?"
+        "text": "Count how many people are outside the pool."
       },
       {
-        "type": "Write",
-        "text": "4. Write 3 sentences describing how the water feels and what sounds you would hear."
+        "text": "Why should we not run around a swimming pool?"
+      },
+      {
+        "text": "Write 1 sentence describing how the water feels."
+      },
+      {
+        "text": "Write 1 sentence describing what you would hear in the pool."
+      },
+      {
+        "text": "Is there a tall chair near the pool?"
+      },
+      {
+        "text": "Can you see anybody feeling cold?"
+      },
+      {
+        "text": "Is it morning or night?"
+      },
+      {
+        "text": "Can you find a slide near the pool, and how many are there?"
+      },
+      {
+        "text": "What is the child searching for in her bag?"
+      },
+      {
+        "text": "Why should you wear goggles in the pool?"
+      },
+      {
+        "text": "How many sunshades are there in this picture?"
+      },
+      {
+        "text": "What food items can you see in this picture?"
+      },
+      {
+        "text": "How many bags are there in this picture?"
+      },
+      {
+        "text": "How many buckets are there in this picture?"
+      },
+      {
+        "text": "How many balls are there in this picture?"
+      },
+      {
+        "text": "How many trees are there in this picture?"
+      },
+      {
+        "text": "Is there any decoration in this picture, and how many colors are in the decoration?"
+      },
+      {
+        "text": "Why is there a room near the swimming pool?"
+      },
+      {
+        "text": "How many slippers are left around the swimming pool?"
+      },
+      {
+        "text": "Can you spot two ladies sitting in chairs and talking to each other?"
+      },
+      {
+        "text": "Can you spot two children sitting and eating ice cream?"
+      },
+      {
+        "text": "Can you spot anybody carrying food on a tray?"
+      },
+      {
+        "text": "Can you spot a dinosaur toy in the swimming pool?"
+      },
+      {
+        "text": "Can you see anybody who is vigilant in this picture?"
+      },
+      {
+        "text": "Can you spot children forming a line in this picture?"
+      },
+      {
+        "text": "Can you spot a dog in this picture? What is it tied to?"
       }
     ]
   },
@@ -176,32 +347,93 @@
     "id": "neighborhood_festival",
     "title": "Neighborhood Festival",
     "image": "images/festival.webp",
-    "wordBank": [
-      "rangoli",
-      "marigold",
-      "lanterns",
-      "sparklers",
-      "drums",
-      "garlands",
-      "balcony",
-      "celebration"
-    ],
     "questions": [
       {
-        "type": "Observe",
-        "text": "1. What decorations and colors can you spot on the houses, balconies, and streets?"
+        "text": "What colors can you spot on the houses, balconies, and streets?"
       },
       {
-        "type": "Detail",
-        "text": "2. Look at the people making the rangoli at the bottom. What shapes and colors are inside it?"
+        "text": "What decorations can you spot on the houses, balconies, and streets?"
       },
       {
-        "type": "Action",
-        "text": "3. Find the musicians on the stage and the people near the food or balloon stalls. What are they doing?"
+        "text": "Look at the people making the rangoli at the bottom. What shapes and colors are inside it?"
       },
       {
-        "type": "Write",
-        "text": "4. Write 3 sentences describing how this festival feels and what sounds you would hear."
+        "text": "Inside the rangoli, what shapes can you see?"
+      },
+      {
+        "text": "Inside the rangoli, what colors can you see?"
+      },
+      {
+        "text": "Can you find somebody who is singing in this street?"
+      },
+      {
+        "text": "Can you find a child asking for a balloon in this street?"
+      },
+      {
+        "text": "Where is the man on the cycle going?"
+      },
+      {
+        "text": "What is the child in the yellow shirt doing?"
+      },
+      {
+        "text": "Is there anybody in this street who is sad?"
+      },
+      {
+        "text": "What color is the goat in this street?"
+      },
+      {
+        "text": "What color is the dog in this street?"
+      },
+      {
+        "text": "Is it day or night in this street?"
+      },
+      {
+        "text": "When night comes, what will all these people do?"
+      },
+      {
+        "text": "What color is the dog in this street?"
+      },
+      {
+        "text": "Is there anybody playing with firecrackers in this street, and what color dress are they wearing?"
+      },
+      {
+        "text": "What color is the dog in this street?"
+      },
+      {
+        "text": "What is the man with the balloons doing?"
+      },
+      {
+        "text": "What food items can you see on the street?"
+      },
+      {
+        "text": "What musical instruments can you see on the street?"
+      },
+      {
+        "text": "How many trees are there on the street?"
+      },
+      {
+        "text": "After giving you the food, what will the shopkeeper do?"
+      },
+      {
+        "text": "Should you cycle fast on the street?"
+      },
+      {
+        "text": "How many cycles can you see on the street?"
+      },
+      {
+        "text": "Is it morning or night on this street?"
+      },
+      {
+        "text": "What are the people near the musicians doing?"
+      },
+      {
+        "text": "What are the people near the food stall doing?"
+      },
+      {
+        "text": "What are the people near the balloon man doing?"
+      },
+      {
+        "text": "Write 1 sentence describing how this festival feels and what sounds you would hear."
       }
     ]
   }
