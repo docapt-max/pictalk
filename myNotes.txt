@@ -1,0 +1,20 @@
+{
+        "type": "Observe",
+        "text": "What games are the children playing in the park?"
+      },
+      {
+        "type": "Observe",
+        "text": "What activitys are happening in the park?"
+      },
+      {
+        "type": "Detail",
+        "text": "Spot three things in the sky or trees. Describe where each one is."
+      },
+      {
+        "type": "Safety",
+        "text": "Who is taking care of the younger children?"
+      },
+      {
+        "type": "Write",
+        "text": "Write 3 sentences about what you would do first if you visited this park."
+      }

@@ -436,9 +436,9 @@ button {
   width: 100%;
   padding: 0.72rem 1rem;
   border-radius: 999px;
-  border: 1.5px solid var(--border-strong);
-  background: var(--surface-elevated);
-  color: #e2e8f0;
+  border: 1.5px solid rgba(110, 231, 183, 0.45);
+  background: rgba(110, 231, 183, 0.16);
+  color: #a7f3d0;
   font-size: 0.96rem;
   font-weight: 800;
   cursor: pointer;
@@ -448,8 +448,8 @@ button {
 }
 
 .next-picture-btn:hover {
-  background: #263449;
-  border-color: var(--primary);
+  background: rgba(110, 231, 183, 0.26);
+  border-color: rgba(110, 231, 183, 0.7);
 }
 
 /* Portrait / Narrow Screen Stacking */

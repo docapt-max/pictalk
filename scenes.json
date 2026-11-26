@@ -16,19 +16,23 @@
     "questions": [
       {
         "type": "Observe",
-        "text": "1. What games are the children playing in the park?"
+        "text": "What games are the children playing in the park?"
+      },
+      {
+        "type": "Observe",
+        "text": "What activitys are happening in the park?"
       },
       {
         "type": "Detail",
-        "text": "2. Spot three things in the sky or trees. Describe where each one is."
+        "text": "Spot three things in the sky or trees. Describe where each one is."
       },
       {
         "type": "Safety",
-        "text": "3. Who is taking care of the younger children, and what are they doing?"
+        "text": "Who is taking care of the younger children?"
       },
       {
         "type": "Write",
-        "text": "4. Write 3 sentences about what you would do first if you visited this park."
+        "text": "Write 3 sentences about what you would do first if you visited this park."
       }
     ]
   },
@@ -61,7 +65,7 @@
       },
       {
         "type": "People",
-        "text": "3. Describe two different workers you see on the platform and their jobs."
+        "text": "3. Who are the two different workers you see on the platform and what is their jobs."
       },
       {
         "type": "Imagine",
@@ -86,15 +90,15 @@
     "questions": [
       {
         "type": "Observe",
-        "text": "1. What subject do you think the teacher is teaching? Give two clues from the picture."
+        "text": "1. What subject do you think the teacher is teaching?"
       },
       {
         "type": "Detail",
-        "text": "2. Name five items you can see on the walls, shelves, or students' desks."
+        "text": "2. Name five items you can see in the class room."
       },
       {
         "type": "Feelings",
-        "text": "3. How do the students look? How can you tell they are paying attention?"
+        "text": "3. what are the students doing? "
       },
       {
         "type": "Write",
