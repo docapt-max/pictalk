@@ -49,7 +49,11 @@
     "questions": [
       {
         "type": "Observe",
-        "text": "1. What are the passengers carrying, and how are they moving their luggage?"
+        "text": "1. What are the passengers carrying?"
+      },
+      {
+        "type": "Observe",
+        "text": "1a.How are passengers moving their luggage?"
       },
       {
         "type": "Detail",

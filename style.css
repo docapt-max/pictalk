@@ -56,99 +56,6 @@ button {
   font: inherit;
 }
 
-/* Header Bar */
-.app-header {
-  background: var(--surface);
-  border-bottom: 1.5px solid var(--border);
-  padding: 0.7rem 1.15rem;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-self: start;
-}
-
-.header-center {
-  justify-self: center;
-}
-
-.brand-badge {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.brand h1 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #f8fafc;
-  letter-spacing: -0.02em;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  justify-self: end;
-}
-
-.ctrl-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.52rem 0.95rem;
-  border-radius: 10px;
-  border: 1.5px solid var(--border-strong);
-  background: var(--surface-elevated);
-  color: var(--text);
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  touch-action: manipulation;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-
-.ctrl-btn:hover {
-  border-color: var(--primary);
-  background: #243247;
-}
-
-.ctrl-btn-transparent {
-  background: transparent;
-  border-color: rgba(148, 163, 184, 0.35);
-}
-
-.ctrl-btn-transparent:hover {
-  background: rgba(148, 163, 184, 0.14);
-  border-color: rgba(148, 163, 184, 0.55);
-}
-
-.ctrl-btn[aria-pressed="true"],
-.ctrl-btn.active {
-  background: rgba(59, 130, 246, 0.28);
-  border-color: var(--primary);
-  color: #ffffff;
-}
-
-.ctrl-btn-primary {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #ffffff;
-  padding: 0.55rem 1.15rem;
-}
-
-.ctrl-btn-primary:hover {
-  background: var(--primary-hover);
-  border-color: var(--primary-hover);
-}
-
 /* Main Stage: ~65% Picture / ~35% Question Panel */
 .stage {
   flex: 1;
@@ -520,6 +427,26 @@ button {
   filter: brightness(1.1);
 }
 
+.next-picture-btn {
+  width: 100%;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface-elevated);
+  color: #e2e8f0;
+  font-size: 0.96rem;
+  font-weight: 800;
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.next-picture-btn:hover {
+  background: #263449;
+  border-color: var(--primary);
+}
+
 /* Portrait / Narrow Screen Stacking */
 @media (max-width: 900px),
 (orientation: portrait) {
@@ -536,10 +463,6 @@ button {
   .image-container {
     min-height: 44vh;
     max-height: 54vh;
-  }
-
-  .ctrl-label {
-    display: none;
   }
 }
 
